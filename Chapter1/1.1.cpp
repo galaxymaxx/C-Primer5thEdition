@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-	my_functions::test_id_generator();
+	my_functions::number_occurrence_counter();
 	return 0;
 }
