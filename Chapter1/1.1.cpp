@@ -1,12 +1,9 @@
 #include <iostream>
-
+#include "Functions.h"
 using namespace std;
 
 int main()
 {
-	// Test cout, cerr and clog
-	cout << "Hello world" << endl;
-	cerr << "error message" << endl;
-	clog << "program about to end" << endl;
-	return -1;
+	my_functions::test_id_generator();
+	return 0;
 }

@@ -115,6 +115,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="1.1.cpp" />
+    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="IDGenerator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Functions.h" />
+    <ClInclude Include="IDGenerator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
