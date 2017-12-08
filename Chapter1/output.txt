@@ -1,0 +1,4 @@
+44 occurs 3 times
+58 occurs 1 times
+48 occurs 2 times
+22 occurs 2 times

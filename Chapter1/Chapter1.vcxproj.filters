@@ -24,12 +24,21 @@
     <ClCompile Include="IDGenerator.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="std.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IDGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sales_item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="std.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

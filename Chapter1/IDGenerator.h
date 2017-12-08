@@ -7,7 +7,7 @@ private:
 
 public:
 	static int get_next_id();
-
+	static int get_this_id();
 };
 
 
