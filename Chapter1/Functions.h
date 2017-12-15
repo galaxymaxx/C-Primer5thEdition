@@ -19,6 +19,21 @@ public:
 	// chapter 2
 	static void signed_and_unsigned();
 	static void override_default_literal();
+	static void default_values();
+	static void identifier();
+	static void reference();
+	static void define_null_pointer();
+	static void change_pointer_and_value();
+	static void const_variable();
+	static void reference_to_const();
+	static void initialization_and_references_to_const();
+	static void const_pointers();
+	static void top_low_level_const();
+	static void constexpr_and_const();
+	static void null_naming_rule();
+	static void type_aliases();
+	static void pointer_const_and_type_aliases();
+	static void auto_type_specifier();
 
 	// chapter 3
 	static void read_word_at_time();
@@ -40,6 +55,10 @@ public:
 	static void read_string_into_vector();
 	static void test_rangefor_vector();
 	static void store_score_in_vector();
+	static void pointer_equality();
+	static void void_pointer();
+	static void pointer_to_pointer();
+	static void reference_to_pointer();
 private:
 
 };

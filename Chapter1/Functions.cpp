@@ -7,6 +7,7 @@
 #include <cctype>
 #include <vector>
 #include <sstream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -440,5 +441,163 @@ void my_functions::override_default_literal()
 	int day = 07;
 	//	int month = 09; // in vaild because 9 is out of the bound of octal
 	// 1024f is invalid because f suffix can only be applied to floating point literals
+}
 
+void my_functions::default_values()
+{
+	int unpredefined_var;
+	// cout << unpredefined_var << endl;	// variable inside a function will be complained for not being initialized
+}
+
+void my_functions::identifier()
+{
+	//int double = 3.14;
+	int _;
+	//int catch - 22;
+	//int 1_or_2 = 1;
+	double Double = 3.14;
+}
+
+void my_functions::reference()
+{
+	int i = 0;
+	int &r1 = i;
+	double d = 0;
+	double &r2 = d;
+	
+	// assignment to reference will be automatically converted, only when declaring reference will the type matter
+	r2 = 3.14159;
+	r2 = r1;
+	i = r2;
+	r1 = d;
+}
+
+void my_functions::define_null_pointer()
+{
+	int *p1 = nullptr;
+	int *p2 = NULL;
+	int *p3 = 0;
+}
+
+void my_functions::pointer_equality()
+{
+	int a = 10;
+	int* p1 = &a;
+}
+
+void my_functions::void_pointer()
+{
+	double a = 3.14, *p_double = &a;
+	void *p_void = p_double;
+	void *p_void2 = &a;	
+	cout << "Void pointer is pointing to " << p_void << endl;
+	cout << "Double pointer is pointing to " << p_double << endl;
+	cout << "void pointer2 is pointing to " << p_void2 << endl;
+}
+
+
+void my_functions::change_pointer_and_value()
+{
+	int a = 10;
+	int *p1 = &a;
+	
+}
+
+void my_functions::pointer_to_pointer()
+{
+	int a = 10;
+	int *p = &a;
+	int **p2 = &p;	// *p2 is wrong
+}
+
+void my_functions::reference_to_pointer()
+{
+	int a = 10;
+	int *p = &a;
+	int *&r = p;	// r is a reference to the pointer 
+}
+
+void my_functions::const_variable()
+{
+	extern const int buf_size;	// defined in main.cpp, not in this file
+	cout << "Buf size is " << buf_size << endl;
+}
+
+void my_functions::reference_to_const()
+{
+	const int c1 = 1024;
+	// Reference must be constant too to refer to a constant variable
+	// int &r1 = c1;	compile error
+	const int &r1 = c1;
+}
+
+void my_functions::initialization_and_references_to_const()
+{
+	int i = 42;
+	const int &r1 = i;	// bind a const int& to a plain int object
+	const int &r2 = 42; // bind a const int& to a literal
+	const int &r3 = r1 * 2; // bind a Wonst int& to a general expression
+	// Can not bind non-const int& to plain intme
+	// int &r4 = r1 * 2;
+}
+
+void my_functions::const_pointers()
+{
+	int errNumb = 0;
+	int *const curErr = &errNumb; // curErr will always point to errNumb
+	const double pi = 3.14159;
+	const double *const pip = &pi;
+	// Error
+	// int &r = 0;	illegel because a plain pointer to int can be pointed to a literal
+	// const int &const r2; must be initialized
+}
+
+void my_functions::top_low_level_const()
+{
+	const int v2 = 0;
+	int v1 = v2;
+	int *p1 = &v1, &r1 = v1;
+	const int *p2 = &v2, *const p3 = &v2, &r2 = v2;
+	r1 = v2;	// top-level const in v2 is ignored
+	// p1 = p2; p2 has a low-level const but p1 doesn't
+	p2 = p1;	// int* can be converted to const int*
+	// p1 = p3	// p3 has a low-level const but p1 doesn't
+	p2 = p3;	// p2 has the same low-level const qualification as p3
+}
+
+void my_functions::constexpr_and_const()
+{
+	const int *p = nullptr;	// a pointer to a const int
+	constexpr int *q = nullptr;	// a const pointer to an int
+}
+
+void my_functions::null_naming_rule()
+{
+	int null = 0; // NULL is key word, but null is not
+	int *p = NULL;
+	int *q = nullptr;
+	int *r = 0;
+	// int *s = null is illegal
+}
+
+void my_functions::type_aliases()
+{
+	typedef double wages;	// wages now has the same meaning of double
+	typedef wages base, *p;	// base is a synonym for double, p for double*
+	using integer = int;	// C++ 11 standard
+}
+
+void my_functions::pointer_const_and_type_aliases()
+{
+	typedef char* pstring;
+	const pstring cstr = nullptr;	// cstr is a constant pointer to char
+	const pstring *ps;	// ps is a pointer to a constant pointer to char
+
+	// attention: can't split pstring to try to understand, because pstring is a whole type
+}
+
+void my_functions::auto_type_specifier()
+{
+	// auto sz = 0, pi = 3.14;	can't simutaneously declare two different types at the same line
+	auto i = 0, *p = &i;
 }
